@@ -105,7 +105,7 @@ static const struct uru4k_dev_profile {
 	[DP_URU4000B] = {
 		.name = "Digital Persona U.are.U 4000B",
 		.auth_cr = FALSE,
-		.encryption = TRUE,
+		.encryption = FALSE, /* auto-detect */
 	},
 };
 
