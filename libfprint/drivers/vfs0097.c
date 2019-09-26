@@ -1,10 +1,6 @@
 #include "validity.h"
 
-#define FP_COMPONENT "validity"
-
-enum {
-    VALIDITY_138a_0097,
-};
+#define FP_COMPONENT "vfs0097"
 
 static int dev_discover(struct libusb_device_descriptor *dsc, uint32_t *devtype) {
     if (dsc->idProduct == 0x0097)
@@ -35,15 +31,15 @@ static void dev_deactivate(struct fp_img_dev *dev) {
 }
 
 static const struct usb_id id_table[] = {
-	{ .vendor = 0x138a, .product = 0x0097, .driver_data = VALIDITY_138a_0097 },
+	{ .vendor = 0x138a, .product = 0x0097 },
 	{ 0, 0, 0, },
 };
 
 struct fp_img_driver validity_driver = {
     .driver = {
-        .id = VALIDITY_ID,
+        .id = VFS0097_ID,
         .name = FP_COMPONENT,
-        .full_name = "Validity90 driver",
+        .full_name = "Validity VFS0097",
         .id_table = id_table,
         .scan_type = FP_SCAN_TYPE_SWIPE,
         .discover = dev_discover,
